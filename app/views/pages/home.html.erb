@@ -1,0 +1,21 @@
+<div ng-app="app">
+  {{ 1 + 1 }}
+
+  <div ng-controller="stuffCtrl">
+    <p>{{ message }}</p>
+    <input ng-model="message">
+
+    <div id="reviews">
+      <h2>Angular reviews</h2>
+      <ul>
+        <li ng-repeat="review in reviews track by $index" ng-click="deleteReview($index)">{{ review }}</li>
+      </ul>
+    </div>
+
+    <h3>Leave a review:</h3>
+    <input ng-model="newReview">
+    <button ng-click="addReview(newReview)">Add review</button>
+
+  </div>
+
+</div>
