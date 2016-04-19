@@ -8,7 +8,11 @@
     <div id="reviews">
       <h2>Angular reviews</h2>
       <ul>
-        <li ng-repeat="review in reviews track by $index" ng-click="deleteReview($index)">{{ review }}</li>
+        <li ng-repeat="review in reviews track by $index"
+            ng-click="deleteReview($index)"
+            ng-if="isPositiveReview(review)">
+          {{ review.text }} - Author: {{ review.author }} - Rating: {{ review.rating }}
+        </li>
       </ul>
     </div>
 
